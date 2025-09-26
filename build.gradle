@@ -1,0 +1,76 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.5.3'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.BuddhaRoad'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // 모든 spring-boot-starter-* 에서 기본 로깅(Logback)을 제외하는 범용 설정
+    // 이 설정을 추가하면 아래 개별 exclude는 필요 없어지지만,
+    // 명확성을 위해 특정 스타터에도 exclude를 유지할 수 있습니다.
+    // 여기서는 가장 확실한 방법으로 모든 스타터의 트랜지티브 로깅 의존성을 제거합니다.
+    configurations.all {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // Spring Data JPA (DB 연동)
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    // Spring Web (RESTful API)
+
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
+    // Oracle Driver
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    // Lombok (Getter, Setter 등 자동 생성)
+
+    // ⭐⭐ Log4j2 스타터는 그대로 유지하여 Log4j2를 사용하도록 합니다. ⭐⭐
+    implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    // Validation (유효성 검사)
+
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    // ⭐⭐ Spring Security (사용자 인증/인가) ⭐⭐
+
+    // testImplementation에 spring-boot-starter-logging이 포함될 수 있으므로,
+    // 위 configurations.all{} 블록에서 제외하는 것이 가장 확실합니다.
+    testImplementation 'org.springframework.security:spring-security-test'
+    // Spring Security Test (시큐리티 테스트)
+
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5' // API
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5' // 구현체
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5' // Jackson (JSON 파싱)
+    // ⭐⭐ JWT (JSON Web Token) ⭐⭐
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    // Spring Boot Test (테스트)
+
+    implementation group: 'net.coobird', name: 'thumbnailator', version: '0.4.20'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
