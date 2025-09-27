@@ -1,0 +1,457 @@
+/* MyPage.css */
+/* 마이페이지 전체 컨테이너 스타일 */
+.my-page-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #333;
+}
+
+/* 마이페이지 제목 스타일 */
+.my-page-title {
+  font-size: 2.8em;
+  color: #6c5ce7; /* 보라색 계열로 예쁘게 */
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* 탭 메뉴 스타일 */
+.my-page-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* 탭 버튼 스타일 */
+.tab-button {
+  background: none;
+  border: none;
+  padding: 15px 25px;
+  margin: 0 10px;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #777;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tab-button:hover {
+  color: #6c5ce7;
+  background-color: #f0f0ff;
+}
+
+.tab-button.active {
+  color: #6c5ce7;
+  border-bottom: 4px solid #6c5ce7;
+  font-weight: 700;
+  background-color: #f8f8ff;
+}
+
+/* 탭 내용 컨테이너 스타일 */
+.my-page-content {
+  padding: 20px;
+  background-color: #fcfcfc;
+  border-radius: 0 0 15px 15px;
+  min-height: 400px; /* 최소 높이 설정 */
+}
+
+/* ⭐️ 공통 탭 내용 섹션 스타일 (UserInfoTab, JourneyShareTab 등이 상속받을 기본 스타일) ⭐️ */
+.tab-content-section {
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+/* 탭 내용 내부 제목 스타일 */
+.tab-content-title {
+  font-size: 1.8em;
+  color: #4a4a4a;
+  margin-bottom: 25px;
+  border-bottom: 1px dashed #e0e0e0;
+  padding-bottom: 15px;
+}
+
+/* 정보 항목 (레이블-값) 스타일 (UserInfoTab에서 사용) */
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #555;
+  min-width: 120px;
+}
+
+.info-value {
+  color: #444;
+  flex-grow: 1;
+  text-align: left; /* 기본적으로 왼쪽 정렬 */
+}
+
+/* 액션 버튼 스타일 (공통) */
+.action-button {
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px;
+  margin-right: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.action-button:hover {
+  background-color: #5a4ac0;
+  transform: translateY(-2px);
+}
+
+.action-button:active {
+  transform: translateY(0);
+}
+
+.delete-button {
+  background-color: #e74c3c;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
+
+/* 검색 폼 스타일 (공통) */
+.search-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.search-form select,
+.search-form input[type="text"] {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95em;
+  color: #555;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.search-form select:focus,
+.search-form input[type="text"]:focus {
+  border-color: #6c5ce7;
+}
+
+.search-button {
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #5a4ac0;
+}
+
+/* 목록 스타일 (공통: .post-list, .comment-list는 JourneyShareTab.css로 이동) */
+/* .post-list, .comment-list {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+} */
+
+/* 목록 아이템 스타일 (공통: .post-item, .comment-item은 JourneyShareTab.css로 이동) */
+/* .post-item, .comment-item {
+  background-color: #fdfdfd;
+  border: 1px solid #eef;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-item:hover, .comment-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+} */
+
+/* .post-title, .comment-content {
+  font-weight: 500;
+  color: #3a3a3a;
+} */
+
+/* .post-meta, .comment-meta {
+  font-size: 0.9em;
+  color: #888;
+} */
+
+.status-label {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+.status-active {
+  background-color: #e6ffe6;
+  color: #28a745;
+}
+
+.status-inactive {
+  background-color: #ffebeb;
+  color: #dc3545;
+}
+
+/* 페이징 스타일 (공통) */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 8px;
+}
+
+.pagination button {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination button.active {
+  background-color: #6c5ce7;
+  color: white;
+  border-color: #6c5ce7;
+}
+
+.pagination button:hover:not(.active) {
+  background-color: #e8e8e8;
+}
+
+/* ⭐️ UserInfoTab 전용 스타일 (MyPage.css에 그대로 유지) ⭐️ */
+.tab-content-section.user-info-tab {
+  background-color: #fcfcfc;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+  margin-top: 20px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #efefef;
+}
+
+.action-input-group {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+}
+
+.action-input-group:last-of-type {
+  border-bottom: none;
+}
+
+.action-input-group .info-label {
+  flex-basis: 120px;
+  min-width: 120px;
+  text-align: right;
+  padding-right: 15px;
+  padding-top: 12px;
+}
+
+.input-with-button {
+  display: flex;
+  flex-grow: 1;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.input-with-button .info-value-input {
+  flex-grow: 1;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  min-width: 150px;
+}
+
+.input-with-button .info-value-input:focus {
+  border-color: #6c5ce7;
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+  outline: none;
+}
+
+.check-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 0.95em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  flex-shrink: 0;
+  box-shadow: 0 2px 5px rgba(40, 167, 69, 0.2);
+}
+
+.check-button:hover {
+  background-color: #218838;
+  transform: translateY(-1px);
+}
+
+.status-message {
+  font-size: 0.88em;
+  margin-top: 5px;
+  margin-left: calc(120px + 15px);
+  width: calc(100% - (120px + 15px));
+  text-align: left;
+  padding-left: 5px;
+  font-weight: 500;
+}
+
+.status-message.success {
+  color: #28a745;
+}
+
+.status-message.error {
+  color: #dc3545;
+}
+
+.password-change-section {
+  flex-direction: column;
+  align-items: flex-start;
+  border-top: 1px dashed #e0e0e0;
+  padding-top: 25px;
+  margin-top: 25px;
+}
+
+.password-change-section h4 {
+  font-size: 1.3em;
+  color: #555;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+}
+
+.password-change-section .info-label {
+  width: auto;
+  text-align: left;
+  padding-right: 0;
+  margin-right: 10px;
+  margin-bottom: 8px;
+  flex-basis: auto;
+}
+
+.password-change-section input {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+/* 반응형 디자인 (MyPage.css에 공통으로 남길 부분만) */
+@media (max-width: 768px) {
+  .my-page-tabs {
+      flex-wrap: wrap;
+      padding-bottom: 5px;
+  }
+  .tab-button {
+      flex-grow: 1;
+      margin: 5px;
+      padding: 12px 15px;
+      font-size: 1.1em;
+  }
+  .search-form {
+      flex-direction: column;
+  }
+  .search-form select,
+  .search-form input[type="text"],
+  .search-button {
+      width: 100%;
+  }
+
+  /* UserInfoTab 관련 반응형 (MyPage.css에 유지) */
+  .action-input-group {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  .action-input-group .info-label {
+      width: 100%;
+      text-align: left;
+      margin-right: 0;
+      padding-right: 0;
+      margin-bottom: 5px;
+      padding-top: 0;
+  }
+  .input-with-button {
+      flex-direction: column;
+      width: 100%;
+      gap: 8px;
+  }
+  .input-with-button .info-value-input {
+      width: 100%;
+      min-width: unset;
+  }
+  .check-button {
+      width: 100%;
+  }
+  .status-message {
+      margin-left: 0;
+      width: 100%;
+      text-align: left;
+  }
+  .password-change-section .info-label {
+      width: 100%;
+      margin-right: 0;
+  }
+  .button-group {
+      flex-direction: column;
+      gap: 10px;
+  }
+  .action-button {
+      width: 100%;
+      margin-right: 0;
+  }
+}

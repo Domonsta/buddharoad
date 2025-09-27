@@ -1,0 +1,653 @@
+/* AdminPage.css (MyPage.css와 유사하게 구성, 색상 등 차이) */
+.admin-page-container {
+  max-width: 1400px; /* 관리자 페이지는 좀 더 넓게 */
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #333;
+}
+
+.admin-page-title {
+  font-size: 2.8em;
+  color: #28a745; /* 관리자 페이지는 초록색 계열로 */
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.admin-page-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.admin-page-tabs .tab-button { /* MyPage.css의 tab-button과 유사하지만 색상 다름 */
+  background: none;
+  border: none;
+  padding: 15px 25px;
+  margin: 0 10px;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #777;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.admin-page-tabs .tab-button:hover {
+  color: #28a745;
+  background-color: #e6ffe6;
+}
+
+.admin-page-tabs .tab-button.active {
+  color: #28a745;
+  border-bottom: 4px solid #28a745;
+  font-weight: 700;
+  background-color: #f0fff0;
+}
+
+.admin-page-content {
+  padding: 20px;
+  background-color: #fcfcfc;
+  border-radius: 0 0 15px 15px;
+  min-height: 500px;
+}
+
+/* ---------------------------------------------------- */
+/* 🔥 AccountInfoTab 관련 스타일 (MyPage.css 참고하여 최종 정렬!) 🔥 */
+/* ---------------------------------------------------- */
+
+/* AccountInfoTab을 포함한 모든 탭 내용 섹션의 기본 스타일 */
+.tab-content-section {
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.admin-page-container .tab-content-title { /* 관리자 페이지 탭 제목 색상 */
+  font-size: 1.8em; /* MyPage.css의 tab-content-title과 동일 */
+  color: #28a745; /* 관리자 페이지 주 색상 */
+  margin-bottom: 25px;
+  border-bottom: 1px dashed #e0e0e0;
+  padding-bottom: 15px;
+}
+
+/* 정보 보기 섹션의 아이템 (아이디, 닉네임, 이메일) 스타일 */
+.account-info-tab .info-item.view-mode {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  margin-bottom: 15px;
+  padding: 8px 0;
+  border-bottom: 1px dashed #eee;
+}
+
+.account-info-tab .info-item.view-mode:last-child {
+  border-bottom: none;
+}
+
+/* 정보 보기 모드: 라벨 스타일 */
+.account-info-tab .info-item.view-mode .info-label {
+  flex-shrink: 0; /* 내용이 길어져도 줄어들지 않음 */
+  width: 90px; /* 라벨 너비 고정 */
+  font-weight: 600;
+  color: #555;
+  text-align: left; /* 왼쪽 정렬 */
+}
+
+/* 정보 보기 모드: 값 스타일 */
+.account-info-tab .info-item.view-mode .info-value {
+  flex-grow: 0; /* 늘어나지 않음 */
+  flex-basis: auto; /* 내용에 따라 너비 자동 조절 */
+  text-align: left; /* 왼쪽 정렬 */
+  margin-left: 20px; /* 라벨과 값 사이 간격 */
+  color: #333;
+  font-weight: 500;
+}
+
+/* ---------------------------------------------------- */
+/* 🔥 정보 수정 폼의 필드 정렬 통일 (MyPage.css의 action-input-group, input-with-button 패턴 적용!) 🔥 */
+/* ---------------------------------------------------- */
+
+/* 정보 수정 폼의 각 행을 감싸는 컨테이너 */
+/* MyPage.css의 .action-input-group 역할과 유사하게, AccountInfoTab에 맞춰 조정 */
+.account-info-tab .info-item.edit-mode { /* .edit-mode 클래스가 붙은 info-item에만 적용 */
+  display: flex;
+  align-items: flex-start; /* 라벨과 오른쪽 그룹을 세로 시작점에 맞춰 정렬 (라벨의 패딩 탑과 일치) */
+  justify-content: space-between; /* 라벨과 입력 필드/버튼 그룹을 양 끝으로 정렬 */
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.account-info-tab .info-item.edit-mode:last-of-type {
+  border-bottom: none; /* 마지막 요소는 경계선 없음 */
+}
+
+/* 정보 수정 폼의 라벨 스타일 통일 */
+/* MyPage.css의 .action-input-group .info-label 역할과 유사하게 조정 */
+.account-info-tab .info-item.edit-mode .info-label {
+  flex-basis: 120px; /* 라벨 너비 고정 (MyPage.css의 action-input-group 참고) */
+  min-width: 120px; /* 최소 너비도 고정 */
+  flex-shrink: 0; /* 라벨이 줄어들지 않도록 */
+  font-weight: 600;
+  color: #555;
+  text-align: right; /* 오른쪽 정렬 */
+  padding-right: 15px; /* 라벨과 입력/버튼 그룹 사이의 간격 (MyPage.css의 info-label과 동일) */
+  padding-top: 12px; /* 입력 필드의 상단 패딩과 맞춰 세로 정렬 */
+}
+
+/* Input 필드 스타일 (정보 수정 폼 공통) */
+.info-value-input {
+  flex-grow: 1; /* input이 남은 공간을 최대한 차지하도록 */
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  min-width: 0; /* flex-grow가 적용될 때 내용이 넘치지 않도록 */
+}
+
+.info-value-input:focus {
+  outline: none;
+  border-color: #28a745; /* 관리자 페이지 주 색상 */
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.2);
+}
+
+/* Input과 버튼이 같이 있는 경우의 레이아웃 (이메일, 닉네임 중복확인) */
+/* MyPage.css의 .input-with-button 역할과 유사하게 조정 */
+.account-info-tab .info-item.edit-mode .input-with-button {
+  display: flex;
+  flex-grow: 1; /* 이 그룹이 라벨을 제외한 남은 공간을 차지하도록 */
+  gap: 10px; /* input과 버튼 사이 간격 */
+  align-items: center; /* 수직 중앙 정렬 */
+  flex-wrap: wrap; /* 작은 화면에서 줄바꿈 */
+}
+
+.account-info-tab .info-item.edit-mode .input-with-button .info-value-input {
+  flex-grow: 1; /* 이 input이 .input-with-button 내에서 남은 공간을 채우도록 */
+  text-align: left; /* input 텍스트는 왼쪽 정렬 */
+}
+
+/* 비밀번호 변경 섹션 스타일 */
+.account-info-tab .info-item.edit-mode.password-change-section {
+  flex-direction: column; /* 세로로 쌓이도록 */
+  align-items: flex-start; /* 왼쪽 정렬 */
+  border-top: 1px dashed #e0e0e0;
+  padding-top: 25px;
+  margin-top: 25px;
+}
+
+.account-info-tab .info-item.edit-mode.password-change-section h4 {
+  font-size: 1.3em;
+  color: #555;
+  margin-bottom: 20px;
+  width: 100%; /* 너비 전체 */
+  text-align: left; /* 왼쪽 정렬 */
+  font-weight: 600;
+}
+
+.account-info-tab .info-item.edit-mode.password-change-section .info-label {
+  width: auto; /* 자동 너비 */
+  text-align: left; /* 왼쪽 정렬 */
+  padding-right: 0;
+  margin-right: 10px;
+  margin-bottom: 8px; /* 각 비밀번호 필드 라벨 아래 간격 */
+  flex-basis: auto; /* 라벨 너비 고정 해제 */
+  padding-top: 0; /* 비밀번호 섹션 라벨은 패딩 탑 제거 */
+}
+
+.account-info-tab .info-item.edit-mode.password-change-section input {
+  width: 100%; /* 전체 너비 차지 */
+  margin-bottom: 15px; /* 각 비밀번호 입력 필드 아래 간격 */
+}
+
+/* 작은 중복확인 버튼 스타일 (AdminPage.css에 공통으로 존재) */
+.small-action-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap; /* 버튼 내용이 줄바꿈 되지 않도록 */
+  flex-shrink: 0; /* 버튼이 줄어들지 않도록 */
+}
+
+.small-action-button:hover {
+  background-color: #218838;
+  transform: translateY(-1px);
+}
+
+.small-action-button:active {
+  transform: translateY(0);
+}
+
+/* 상태 메시지 스타일 (MyPage.css에서 가져와 AdminPage.css에 추가) */
+.status-message {
+    font-size: 0.88em;
+    margin-top: 5px;
+    /* 라벨과 입력필드 정렬을 고려하여 마진 조정 (여기서는 폼 전체의 왼쪽 마진을 0으로 가정) */
+    width: 100%; /* 부모 너비에 맞춰 */
+    text-align: left; /* 왼쪽 정렬 */
+    padding-left: calc(120px + 15px + 10px); /* 라벨 너비 + 라벨 오른쪽 패딩 + 인풋-버튼 갭 */
+    font-weight: 500;
+}
+
+.status-message.success {
+    color: #28a745;
+}
+
+.status-message.error {
+    color: #dc3545;
+}
+
+
+/* ---------------------------------------------------- */
+/* 기존 AdminPage.css 나머지 스타일 (변화 없음) */
+/* ---------------------------------------------------- */
+
+.admin-page-container .action-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1.05em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.admin-page-container .action-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+.admin-page-container .action-button:active {
+  transform: translateY(0);
+}
+
+.admin-page-container .action-button.secondary {
+background-color: #f0f2f5;
+color: #555;
+border: 1px solid #ddd;
+}
+
+.admin-page-container .action-button.secondary:hover {
+background-color: #e0e2e5;
+color: #333;
+}
+
+.admin-page-container .delete-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1.05em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.admin-page-container .delete-button:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+.admin-page-container .delete-button:active {
+  transform: translateY(0);
+}
+
+.admin-page-container .search-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.admin-page-container .search-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+.admin-page-container .search-button:active {
+  transform: translateY(0);
+}
+
+.search-form {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-form select,
+.search-form input[type="text"] {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  color: #555;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+  width: 200px;
+}
+
+.search-form input[type="text"] {
+  flex-grow: 1;
+}
+
+.admin-member-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 0.95em;
+}
+
+.admin-member-table th,
+.admin-member-table td {
+  border: 1px solid #eee;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.admin-member-table th {
+  background-color: #f2f2f2;
+  font-weight: 600;
+  color: #555;
+}
+
+.admin-member-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.admin-member-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.member-actions button {
+  padding: 8px 12px;
+  margin-right: 5px;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+.member-status-active { color: #28a745; font-weight: 600; }
+.member-status-inactive { color: #dc3545; font-weight: 600; }
+
+.statistic-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.statistic-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.statistic-card:hover {
+  transform: translateY(-5px);
+}
+
+.statistic-card h4 {
+  font-size: 1.4em;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.statistic-value {
+  font-size: 2.8em;
+  font-weight: 700;
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.statistic-description {
+  font-size: 0.9em;
+  color: #777;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .admin-page-tabs {
+    flex-wrap: wrap;
+    padding-bottom: 5px;
+  }
+  .admin-page-tabs .tab-button {
+    flex-grow: 1;
+    margin: 5px;
+    padding: 12px 15px;
+    font-size: 1.1em;
+  }
+  .search-form {
+    flex-direction: column;
+  }
+  .search-form select,
+  .search-form input[type="text"],
+  .search-button {
+    width: 100%;
+  }
+  .statistic-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- ContentManagementTab 전용 스타일 (테이블 관련) --- */
+
+/* 테이블을 감싸는 컨테이너 - 테이블이 넘칠 때 스크롤바, 그림자, 둥근 모서리 */
+.admin-table-container {
+  overflow-x: auto; /* 테이블 내용이 길어지면 가로 스크롤 생성 */
+  margin-bottom: 20px;
+  border-radius: 10px; /* 컨테이너 모서리 둥글게 */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* 은은한 그림자 */
+  background-color: #fff; /* 컨테이너 배경색 */
+}
+
+/* 실제 테이블 스타일 */
+.admin-data-table {
+  width: 100%; /* 부모 컨테이너 너비에 꽉 채움 */
+  border-collapse: collapse; /* 셀 경계선 겹치기 */
+  /* background-color: #fff; 이 부분은 컨테이너에 있으므로 중복 제거 */
+}
+
+/* 테이블 헤더(th)와 데이터 셀(td) 공통 스타일 */
+.admin-data-table th,
+.admin-data-table td {
+  padding: 15px 20px; /* 셀 내부 패딩 */
+  text-align: left; /* 텍스트 왼쪽 정렬 */
+  border-bottom: 1px solid #eee; /* 하단 경계선만 */
+  white-space: nowrap; /* 셀 내용이 줄바꿈 되지 않고 한 줄에 표시되도록 */
+}
+
+/* 테이블 헤더(th) 스타일 */
+.admin-data-table th {
+  background-color: #eaf7ed; /* 헤더 배경색 (옅은 초록) */
+  color: #28a745; /* 헤더 텍스트 색상 (짙은 초록) */
+  font-weight: 700; /* 글씨 굵게 */
+  text-transform: uppercase; /* 텍스트 대문자 변환 */
+  font-size: 0.9em; /* 폰트 크기 약간 작게 */
+  letter-spacing: 0.5px; /* 글자 간격 */
+}
+
+/* 테이블 바디 행(tr) 호버 효과 */
+.admin-data-table tbody tr:hover {
+  background-color: #f5fff6; /* 호버 시 배경색 (아주 옅은 초록) */
+}
+
+/* 데이터 없을 때 메시지 스타일 */
+.admin-data-table .no-data-message {
+  text-align: center;
+  padding: 50px;
+  color: #777;
+  font-style: italic;
+}
+
+/* 게시판 종류를 표시하는 라벨 스타일 */
+.board-type-label {
+  display: inline-block; /* 인라인 블록으로 만들어서 패딩 적용 */
+  padding: 5px 10px;
+  border-radius: 5px; /* 둥근 모서리 */
+  font-size: 0.85em;
+  font-weight: 600;
+  text-align: center;
+  margin-right: 8px; /* 제목과의 간격 */
+}
+
+/* 사찰정보 게시판 라벨 색상 */
+.board-type-label.temple-board {
+  background-color: #e0f2f7; /* 옅은 하늘색 */
+  color: #2196f3; /* 파란색 */
+}
+
+/* 리뷰 게시판 라벨 색상 */
+.board-type-label.review-board {
+  background-color: #fff3e0; /* 옅은 주황색 */
+  color: #ff9800; /* 주황색 */
+}
+
+/* 테이블 내 링크(제목/내용) 스타일 */
+.admin-data-table td a {
+  color: #444; /* 기본 텍스트 색상 */
+  text-decoration: none; /* 밑줄 제거 */
+  font-weight: 500;
+  transition: color 0.2s ease; /* 호버 시 색상 변화 부드럽게 */
+}
+
+.admin-data-table td a:hover {
+  color: #28a745; /* 호버 시 초록색 */
+  text-decoration: underline; /* 호버 시 밑줄 추가 */
+}
+
+/* 상태 표시 텍스트 색상 */
+.status-active {
+  color: #28a745; /* 초록색 */
+  font-weight: 600;
+}
+
+.status-inactive {
+  color: #ffc107; /* 주황색 */
+  font-weight: 600;
+}
+
+.status-deleted {
+  color: #dc3545; /* 빨간색 */
+  font-weight: 600;
+}
+
+/* 액션 버튼 그룹화 (테이블 셀 안에 버튼이 여러 개 있을 때) */
+.action-buttons-group {
+  display: flex; /* 버튼을 가로로 정렬 */
+  gap: 8px; /* 버튼 사이 간격 */
+  justify-content: flex-start; /* 왼쪽 정렬 */
+}
+
+/* 작은 액션 버튼의 공통 스타일 */
+.small-action-button {
+  padding: 8px 12px; /* 패딩 */
+  font-size: 0.85em; /* 폰트 크기 약간 작게 */
+  border-radius: 8px; /* 둥근 모서리 */
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease; /* 호버/클릭 효과 */
+  white-space: nowrap; /* 버튼 텍스트가 줄바꿈 되지 않도록 */
+}
+
+/* 활성화 버튼 스타일 */
+.action-button.small-action-button {
+  background-color: #28a745; /* 관리자 페이지 주 색상 */
+  color: white;
+  border: none;
+}
+
+.action-button.small-action-button:hover:not(:disabled) {
+  background-color: #218838;
+  transform: translateY(-1px); /* 살짝 위로 이동 */
+}
+.action-button.small-action-button:active:not(:disabled) {
+  transform: translateY(0); /* 클릭 시 원위치 */
+}
+
+/* 삭제 버튼 스타일 */
+.delete-button.small-action-button {
+  background-color: #dc3545; /* 빨간색 */
+  color: white;
+  border: none;
+}
+
+.delete-button.small-action-button:hover:not(:disabled) {
+  background-color: #c82333;
+  transform: translateY(-1px);
+}
+.delete-button.small-action-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* 비활성화된 버튼 스타일 */
+.action-button.small-action-button:disabled,
+.delete-button.small-action-button:disabled {
+  background-color: #cccccc; /* 회색 배경 */
+  cursor: not-allowed; /* 마우스 커서 변경 */
+  opacity: 0.7; /* 투명도 */
+  transform: none; /* 호버/클릭 효과 제거 */
+}
+
+/* 페이지네이션 스타일 (기존 pagination 클래스에 추가) */
+/* 이 부분은 이미 원래 코드에 있거나 다른 곳에 정의되어 있을 가능성이 높으니, 중복되지 않게 조심해서 추가해줘. */
+/* 만약 기존에 없었다면 추가하고, 있다면 기존 스타일에 병합하거나 필요한 부분만 override 하면 돼. */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  gap: 5px; /* 버튼 사이 간격 */
+}
+
+.pagination .page-button {
+  background-color: #f0f0f0;
+  color: #555;
+  border: 1px solid #ddd;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination .page-button:hover:not(:disabled) {
+  background-color: #e0e0e0;
+  border-color: #ccc;
+}
+
+.pagination .page-button.active {
+  background-color: #28a745; /* 관리자 페이지 주 색상 */
+  color: white;
+  border-color: #28a745;
+  font-weight: 700;
+}
+
+.pagination .page-button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: not-allowed;
+}
