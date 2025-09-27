@@ -20,7 +20,6 @@
 ### 기술 스택
 
 * React 기반 Front-end 초기 구조 완성
-* *(추가 예정: Back-end 기술 스택, DB 종류 등)*
 
 ### Database
 
