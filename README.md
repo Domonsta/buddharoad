@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+'Buddha Road' 프로젝트 현황
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1.프로젝트 개요
+◾프로젝트 명 : Buddha Road (부처님의 길)
+◾개발 목표 : 사용자가 전국 사찰 정보를 공유하고, 방문 경험을 기록하는 커뮤니티 기반 웹 서비스 구축
+◾v0.4 개발 진행 중 (핵심 기능 구현 완료, Front-end 및 UX/UI 보완 단계)
 
-## Available Scripts
+2. 주요 개발 진행 현황 및 달성 목표
+◾핵심 기능 구현 완료
+- 사찰 정보/리뷰 게시판: CRUD (생성, 조회, 수정, 삭제) 기능
+- 사용자 인터랙션: '좋아요', '찜하기' (관심 사찰 등록) 기능
+  
+◾기술 스택 : React 기반 Front-end 초기 구조 완성
 
-In the project directory, you can run:
+◾Database
+<img width="1426" height="1532" alt="붓다로드 ERD" src="https://github.com/user-attachments/assets/e6c23d5a-57a4-4efd-83b4-2eea306c9ed4" />
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3.향후 개발 계획
+◾ 마이페이지 내 1:1 문의 게시판 기능 구현
+◾ 관리자용 1:1 문의 답글 및 댓글 관리 기능 구현
+◾ 웹사이트 컨셉에 맞는 UI/UX 구현 및 React Front-end 코드 전체 보강 작업
