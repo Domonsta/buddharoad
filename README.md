@@ -17,10 +17,6 @@
 * **사찰 정보/리뷰 게시판:** CRUD (생성, 조회, 수정, 삭제) 기능
 * **사용자 인터랙션:** '좋아요', '찜하기' (관심 사찰 등록) 기능
 
-### 기술 스택
-
-* React 기반 Front-end 초기 구조 완성
-
 ### Database
 
 <img width="1426" height="1532" alt="붓다로드 ERD" src="https://github.com/user-attachments/assets/17b23349-e216-4070-bf78-8202b4aed264" />
