@@ -24,7 +24,7 @@
 
 ### Database
 
-**<img width="1426" height="1532" alt="붓다로드 ERD" src="https://github.com/user-attachments/assets/2f1ce8.png">**
+<img width="1426" height="1532" alt="붓다로드 ERD" src="https://github.com/user-attachments/assets/17b23349-e216-4070-bf78-8202b4aed264" />
 
 ---
 
